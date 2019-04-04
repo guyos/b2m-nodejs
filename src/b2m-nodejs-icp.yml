@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: node-prom
-          image: rszypulka/b2m-nodejs
+          image: us.icr.io/guysh/btm-nodejs
           ports:
             - containerPort: 3001
           livenessProbe:
