@@ -1,2 +1,5 @@
+site/
 src/node_modules
 src/yarn.lock
+mkdocs-material/
+.DS_Store

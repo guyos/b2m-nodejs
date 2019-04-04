@@ -9,7 +9,17 @@ nav:
     - 5. Deploy to IBM Cloud Private: ICP.md
     - About: about.md
 theme:
-  name: 'material'
+  name: null
+  custom_dir: 'mkdocs-material/material'
+  language: 'en'
+  palette: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo:
+    icon: 'cloud'
+  feature:
+    tabs: false
 markdown_extensions:
   - admonition
   - codehilite:
