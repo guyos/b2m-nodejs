@@ -33,8 +33,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -58,6 +58,9 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -104,7 +107,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://rafal-szypulka.github.io/b2m-nodejs" title="Build to Manage - Node.js application monitoring and logging lab" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -114,22 +117,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Build to Manage - Node.js application monitoring and logging lab
-              </span>
-              <span class="md-header-nav__topic">
-                5. Deploy to IBM Cloud Private
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Build to Manage - Node.js application monitoring and logging lab
+            </span>
+            <span class="md-header-nav__topic">
+              5. Deploy to IBM Cloud Private
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -152,7 +152,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -163,20 +162,18 @@
 
   
 
-
-  <a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -200,7 +197,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://rafal-szypulka.github.io/b2m-nodejs" title="Build to Manage - Node.js application monitoring and logging lab" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </a>
     Build to Manage - Node.js application monitoring and logging lab
@@ -212,20 +209,18 @@
 
   
 
-
-  <a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -453,16 +448,14 @@
                 <h2 id="containerize-the-app-and-deploy-to-ibm-cloud-private">Containerize the app and deploy to IBM Cloud Private<a class="headerlink" href="#containerize-the-app-and-deploy-to-ibm-cloud-private" title="Permanent link">&para;</a></h2>
 <h3 id="create-a-docker-container">Create a Docker container<a class="headerlink" href="#create-a-docker-container" title="Permanent link">&para;</a></h3>
 <p>Use provided <code>Dockerfile</code> to build the application container:</p>
-<div class="codehilite"><pre><span></span>cd ~/b2m-nodejs/src
-docker build -t b2m-nodejs .
-</pre></div>
+<pre class="codehilite"><code>cd ~/b2m-nodejs/src
+docker build -t b2m-nodejs .</code></pre>
 
 
 <p>Test container locally (make sure you stopped the local Node.js server and removed previous version of this docker container).</p>
-<div class="codehilite"><pre><span></span>docker stop b2m-nodejs
+<pre class="codehilite"><code>docker stop b2m-nodejs
 docker rm b2m-nodejs
-docker run --name btm-nodejs -d -p 3001:3001 b2m-nodejs
-</pre></div>
+docker run --name btm-nodejs -d -p 3001:3001 b2m-nodejs</code></pre>
 
 
 <p>Access <code>http://localhost:3001</code> to verify the application is running.</p>
@@ -470,57 +463,51 @@ docker run --name btm-nodejs -d -p 3001:3001 b2m-nodejs
 <p>The <code>b2m-nodejs</code> application container image has been uploaded to public Docker Hub: <code>rszypulka/b2m-nodejs</code>. You can also upload it to the local ICP Container Registry.</p>
 <h3 id="deploy-b2m-nodejs-application-to-the-icp-cluster">Deploy b2m-nodejs application to the ICP cluster<a class="headerlink" href="#deploy-b2m-nodejs-application-to-the-icp-cluster" title="Permanent link">&para;</a></h3>
 <p>Review provided YAML file <code>b2m-nodejs-icp.yml</code> and use it to deploy the application to IBM Cloud Private cluster. <code>b2m-nodejs</code> deployment object will pull application image container <code>rszypulka/b2m-nodejs</code> from Docker Hub.</p>
-<div class="codehilite"><pre><span></span>kubectl apply -f b2m-nodejs-icp.yml
-</pre></div>
+<pre class="codehilite"><code>kubectl apply -f b2m-nodejs-icp.yml</code></pre>
 
 
 <p>Verify deployment status.</p>
-<div class="codehilite"><pre><span></span>$ kubectl get deploy b2m-nodejs -n default
+<pre class="codehilite"><code>$ kubectl get deploy b2m-nodejs -n default
 NAME         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-b2m-nodejs   1         1         1            1           4h
-</pre></div>
+b2m-nodejs   1         1         1            1           4h</code></pre>
 
 
 <p>Get the application URL by running these commands:</p>
-<div class="codehilite"><pre><span></span>export NODE_PORT=$(kubectl get --namespace default -o jsonpath=&quot;{.spec.ports[0].nodePort}&quot; services b2m-nodejs)
+<pre class="codehilite"><code>export NODE_PORT=$(kubectl get --namespace default -o jsonpath=&quot;{.spec.ports[0].nodePort}&quot; services b2m-nodejs)
 export NODE_IP=$(kubectl get nodes -l proxy=true -o jsonpath=&quot;{.items[0].status.addresses[?(@.type==\&quot;Hostname\&quot;)].address}&quot;)
-echo http://$NODE_IP:$NODE_PORT
-</pre></div>
+echo http://$NODE_IP:$NODE_PORT</code></pre>
 
 
 <p>Use the browser to access the application URL: <code>http://&lt;node_external_ip&gt;:&lt;external_nodeport&gt;</code> </p>
 <h2 id="enable-monitoring-using-icp-prometheus-and-grafana">Enable monitoring using ICP Prometheus and Grafana<a class="headerlink" href="#enable-monitoring-using-icp-prometheus-and-grafana" title="Permanent link">&para;</a></h2>
 <p>Add the following configuration in the <code>monitoring-prometheus</code> ConfigMap, <code>scrape_configs:</code> section.</p>
-<div class="codehilite"><pre><span></span>    scrape_configs:
-      - job_name: &#39;b2m-nodejs&#39;
+<pre class="codehilite"><code>    scrape_configs:
+      - job_name: 'b2m-nodejs'
         scrape_interval: 20s
         static_configs:
           - targets:
             - b2m-nodejs.default.svc:80
             labels:
-              service: &#39;my-service&#39;
-              group: &#39;production&#39;
-</pre></div>
+              service: 'my-service'
+              group: 'production'</code></pre>
 
 
 <p>Make sure the indentation is correct.</p>
 <p><a href="http://docs.grafana.org/reference/export_import/">Import</a> provided Grafana dashboard <code>grafana-dashboard.json</code>.</p>
 <p>Generate ICP application traffic using provided script:</p>
-<div class="codehilite"><pre><span></span>./load_test_icp.sh &lt;application_url&gt;
-</pre></div>
+<pre class="codehilite"><code>./load_test_icp.sh &lt;application_url&gt;</code></pre>
 
 
 <p>Use the <code>&lt;application_url&gt;</code> collected in previous chapter.</p>
 <p>Access the ICP Grafana console and verify it properly shows metrics.</p>
 <h2 id="define-the-kubernetes-liveness-probe-for-use-with-built-in-application-health-check">Define the kubernetes liveness probe for use with built-in application health check<a class="headerlink" href="#define-the-kubernetes-liveness-probe-for-use-with-built-in-application-health-check" title="Permanent link">&para;</a></h2>
 <p>The provided <code>b2m-nodejs-icp.yml</code> deployment YAML file define <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#define-a-liveness-http-request">liveness probe</a> that uses the implemented <code>/healthz</code> route.</p>
-<div class="codehilite"><pre><span></span>   livenessProbe:
+<pre class="codehilite"><code>   livenessProbe:
      httpGet:
        path: /healthz
        port: 3001
      initialDelaySeconds: 3
-     periodSeconds: 10
-</pre></div>
+     periodSeconds: 10</code></pre>
 
 
 <p>Check the URL: <code>http://&lt;node_external_ip&gt;:&lt;external_nodeport&gt;/healthz</code> to verify current health status.</p>
@@ -540,12 +527,11 @@ echo http://$NODE_IP:$NODE_PORT
 <p>Expected output: <code>{"status":"ok"}</code></p>
 </blockquote>
 <p>Verify the pod has been restarted.</p>
-<div class="codehilite"><pre><span></span>kubectl describe pod b2m-nodejs
-</pre></div>
+<pre class="codehilite"><code>kubectl describe pod b2m-nodejs</code></pre>
 
 
 <p>in the <code>Events</code> section you should see events similar to the following:</p>
-<div class="codehilite"><pre><span></span>Events:
+<pre class="codehilite"><code>Events:
   Type     Reason     Age               From                     Message
   ----     ------     ----              ----                     -------
   Warning  Unhealthy  3m (x9 over 58m)  kubelet, 172.16.254.163  Liveness probe failed: HTTP probe failed with statuscode: 500
@@ -553,8 +539,7 @@ echo http://$NODE_IP:$NODE_PORT
   Normal   Killing    2m (x3 over 58m)  kubelet, 172.16.254.163  Killing container with id docker://node-prom:Container failed liveness probe.. Container will be killed and recreated.
   Normal   Pulled     2m (x4 over 1h)   kubelet, 172.16.254.163  Successfully pulled image &quot;rszypulka/b2m-nodejs&quot;
   Normal   Created    2m (x4 over 1h)   kubelet, 172.16.254.163  Created container
-  Normal   Started    2m (x4 over 1h)   kubelet, 172.16.254.163  Started container
-</pre></div>
+  Normal   Started    2m (x4 over 1h)   kubelet, 172.16.254.163  Started container</code></pre>
                 
                   
                 
@@ -618,20 +603,17 @@ echo http://$NODE_IP:$NODE_PORT
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.3ca04de7.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
-    
-    
+        <script src="../search/main.js"></script>
       
     
   </body>

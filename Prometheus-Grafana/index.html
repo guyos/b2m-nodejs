@@ -33,8 +33,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -58,6 +58,9 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -104,7 +107,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://rafal-szypulka.github.io/b2m-nodejs" title="Build to Manage - Node.js application monitoring and logging lab" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -114,22 +117,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Build to Manage - Node.js application monitoring and logging lab
-              </span>
-              <span class="md-header-nav__topic">
-                4. Prometheus and Grafana configuration
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Build to Manage - Node.js application monitoring and logging lab
+            </span>
+            <span class="md-header-nav__topic">
+              4. Prometheus and Grafana configuration
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -152,7 +152,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -163,20 +162,18 @@
 
   
 
-
-  <a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -200,7 +197,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://rafal-szypulka.github.io/b2m-nodejs" title="Build to Manage - Node.js application monitoring and logging lab" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </a>
     Build to Manage - Node.js application monitoring and logging lab
@@ -212,20 +209,18 @@
 
   
 
-
-  <a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -631,113 +626,100 @@
 Configuration for this lab is based on <a href="https://github.com/vegasbrianc/prometheus">https://github.com/vegasbrianc/prometheus</a>.
 In the lab VM the Prometheus docker compose project was cloned to <code>/root/prometheus</code>.</p>
 <p>1). Add the scraping job definition to the Prometheus configuration file <code>/root/prometheus/prometheus/prometheus.yml</code> by adding (uncommenting in the lab VM) the following code within <code>scrape_config</code> section:</p>
-<div class="codehilite"><pre><span></span>  - job_name: &#39;btm-nodejs&#39;
+<pre class="codehilite"><code>  - job_name: 'btm-nodejs'
     scrape_interval: 20s
     static_configs:
-    - targets: [&#39;xxx.xxx.xxx.xxx:3001&#39;]
+    - targets: ['xxx.xxx.xxx.xxx:3001']
       labels:
-        service: &#39;btm-nodejs&#39;
-        group: &#39;production&#39;
-</pre></div>
+        service: 'btm-nodejs'
+        group: 'production'</code></pre>
 
 
 <p>replace xxx.xxx.xxx.xxx with your own host machine's IP. In the Skytap lab VM, the IP address should be <code>10.0.0.1</code>.</p>
 <p>2). Start Prometheus &amp; Grafana stack:</p>
-<div class="codehilite"><pre><span></span>cd /root/prometheus
-docker-compose up -d
-</pre></div>
+<pre class="codehilite"><code>cd /root/prometheus
+docker-compose up -d</code></pre>
 
 
 <p>Expected output:</p>
-<div class="codehilite"><pre><span></span>Creating network &quot;prometheus_back-tier&quot; with the default driver
+<pre class="codehilite"><code>Creating network &quot;prometheus_back-tier&quot; with the default driver
 Creating network &quot;prometheus_front-tier&quot; with the default driver
 Creating prometheus_cadvisor_1      ... done
 Creating prometheus_alertmanager_1  ... done
 Creating prometheus_node-exporter_1 ... done
 Creating prometheus_prometheus_1    ... done
-Creating prometheus_grafana_1       ... done
-</pre></div>
+Creating prometheus_grafana_1       ... done</code></pre>
 
 
 <p>Verify that Prometheus server was started via: <a href="http://localhost:9090/graph">http://localhost:9090</a>
 Check the status of scraping targets in Prometheus UI -&gt; Status -&gt; Targets </p>
 <h2 id="run-example-promql-queries">Run example PromQL queries<a class="headerlink" href="#run-example-promql-queries" title="Permanent link">&para;</a></h2>
 <p>Generate some application load before running the queries:</p>
-<div class="codehilite"><pre><span></span>cd ~/b2m-nodejs/src/
-./load_test.sh
-</pre></div>
+<pre class="codehilite"><code>cd ~/b2m-nodejs/src/
+./load_test.sh</code></pre>
 
 
 <p>Run the following example PromQL queries using the Prometheus UI.</p>
 <h3 id="throughput">Throughput<a class="headerlink" href="#throughput" title="Permanent link">&para;</a></h3>
 <h4 id="error-rate">Error rate<a class="headerlink" href="#error-rate" title="Permanent link">&para;</a></h4>
 <p>Range[0,1]: number of 5xx requests / total number of requests</p>
-<div class="codehilite"><pre><span></span>sum(increase(http_request_duration_ms_count{code=~&quot;^5..$&quot;}[1m])) /  sum(increase(http_request_duration_ms_count[1m]))
-</pre></div>
+<pre class="codehilite"><code>sum(increase(http_request_duration_ms_count{code=~&quot;^5..$&quot;}[1m])) /  sum(increase(http_request_duration_ms_count[1m]))</code></pre>
 
 
 <p>Expected value <code>~0.2</code> because our application should return 500 for about 20% of transactions.</p>
 <h4 id="request-per-minute">Request Per Minute<a class="headerlink" href="#request-per-minute" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>sum(rate(http_request_duration_ms_count[1m])) by (service, route, method, code)  * 60
-</pre></div>
+<pre class="codehilite"><code>sum(rate(http_request_duration_ms_count[1m])) by (service, route, method, code)  * 60</code></pre>
 
 
 <p>Check the graph.</p>
 <h3 id="response-time">Response Time<a class="headerlink" href="#response-time" title="Permanent link">&para;</a></h3>
 <h4 id="apdex">Apdex<a class="headerlink" href="#apdex" title="Permanent link">&para;</a></h4>
 <p><a href="https://en.wikipedia.org/wiki/Apdex">Apdex</a> score approximation: <code>100ms</code> target and <code>300ms</code> tolerated response time</p>
-<div class="codehilite"><pre><span></span>(sum(rate(http_request_duration_ms_bucket{le=&quot;100&quot;}[1m])) by (service) + sum(rate(http_request_duration_ms_bucket{le=&quot;300&quot;}[1m])) by (service)
-) / 2 / sum(rate(http_request_duration_ms_count[1m])) by (service)
-</pre></div>
+<pre class="codehilite"><code>(sum(rate(http_request_duration_ms_bucket{le=&quot;100&quot;}[1m])) by (service) + sum(rate(http_request_duration_ms_bucket{le=&quot;300&quot;}[1m])) by (service)
+) / 2 / sum(rate(http_request_duration_ms_count[1m])) by (service)</code></pre>
 
 
 <blockquote>
 <p>Note that we divide the sum of both buckets. The reason is that the histogram buckets are cumulative. The le="100" bucket is also contained in the le="300" bucket; dividing it by 2 corrects for that. - <a href="https://prometheus.io/docs/practices/histograms/#apdex-score">Prometheus docs</a></p>
 </blockquote>
 <h4 id="95th-response-time">95th Response Time<a class="headerlink" href="#95th-response-time" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>histogram_quantile(0.95, sum(rate(http_request_duration_ms_bucket[1m])) by (le, service, route, method))
-</pre></div>
+<pre class="codehilite"><code>histogram_quantile(0.95, sum(rate(http_request_duration_ms_bucket[1m])) by (le, service, route, method))</code></pre>
 
 
 <h4 id="median-response-time">Median Response Time<a class="headerlink" href="#median-response-time" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>histogram_quantile(0.5, sum(rate(http_request_duration_ms_bucket[1m])) by (le, service, route, method))
-</pre></div>
+<pre class="codehilite"><code>histogram_quantile(0.5, sum(rate(http_request_duration_ms_bucket[1m])) by (le, service, route, method))</code></pre>
 
 
 <h4 id="average-response-time">Average Response Time<a class="headerlink" href="#average-response-time" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>avg(rate(http_request_duration_ms_sum[1m]) / rate(http_request_duration_ms_count[1m])) by (service, route, method, code)
-</pre></div>
+<pre class="codehilite"><code>avg(rate(http_request_duration_ms_sum[1m]) / rate(http_request_duration_ms_count[1m])) by (service, route, method, code)</code></pre>
 
 
 <p><img alt="Prometheus - Data" src="../images/prometheus-data.png" /></p>
 <h3 id="memory-usage">Memory Usage<a class="headerlink" href="#memory-usage" title="Permanent link">&para;</a></h3>
 <h4 id="average-memory-usage">Average Memory Usage<a class="headerlink" href="#average-memory-usage" title="Permanent link">&para;</a></h4>
 <p>In Megabytes.</p>
-<div class="codehilite"><pre><span></span>avg(nodejs_external_memory_bytes / 1024 ) by (service)
-</pre></div>
+<pre class="codehilite"><code>avg(nodejs_external_memory_bytes / 1024 ) by (service)</code></pre>
 
 
 <h2 id="configure-prometheus-alert">Configure Prometheus alert<a class="headerlink" href="#configure-prometheus-alert" title="Permanent link">&para;</a></h2>
 <p>Alerting rules allows to define alert conditions based on Prometheus expression language expressions and to send notifications about firing alerts to an external service. In this lab we will configure one alerting rule for median response time higher than 100ms.</p>
 <p><strong>Lab instruction:</strong></p>
 <p>Add the following alert rule to the <code>alert.rules</code> file. In the lab VM it is located in <code>/root/prometheus/prometheus/alert.rules</code></p>
-<div class="codehilite"><pre><span></span>  - alert: APIHighMedianResponseTime
+<pre class="codehilite"><code>  - alert: APIHighMedianResponseTime
     expr: histogram_quantile(0.5, sum by(le, service, route, method) (rate(http_request_duration_ms_bucket[1m])))
       &gt; 30
     for: 1m
     annotations:
-      description: &#39;{{ $labels.service }}, {{ $labels.method }} {{ $labels.route }}
-        has a median response time above 100ms (current value: {{ $value }}ms)&#39;
+      description: '{{ $labels.service }}, {{ $labels.method }} {{ $labels.route }}
+        has a median response time above 100ms (current value: {{ $value }}ms)'
       summary: High median response time on {{ $labels.service }} and {{ $labels.method
-        }} {{ $labels.route }}
-</pre></div>
+        }} {{ $labels.route }}</code></pre>
 
 
 <p>Restart the Prometheus stack:</p>
-<div class="codehilite"><pre><span></span>cd ~/prometheus
+<pre class="codehilite"><code>cd ~/prometheus
 docker-compose down
-docker-compose up -d
-</pre></div>
+docker-compose up -d</code></pre>
 
 
 <p>Alerts can be listed via Prometheus UI: <a href="http://localhost:9090/alerts">http://localhost:9090/alerts</a></p>
@@ -772,9 +754,8 @@ docker-compose up -d
 <p><img alt="Grafana - Throughput" src="../images/grafana.png" /></p>
 <p>Review the configuration of each dashboard panel. Check the <a href="http://docs.grafana.org/reference/annotations/">annotation</a> settings.</p>
 <p>Define the <a href="https://en.wikipedia.org/wiki/Apdex">Apdex</a> score chart using the following query:</p>
-<div class="codehilite"><pre><span></span>(sum(rate(http_request_duration_ms_bucket{le=&quot;100&quot;}[1m])) by (service) + sum(rate(http_request_duration_ms_bucket{le=&quot;300&quot;}[1m])) by (service)
-) / 2 / sum(rate(http_request_duration_ms_count[1m])) by (service)
-</pre></div>
+<pre class="codehilite"><code>(sum(rate(http_request_duration_ms_bucket{le=&quot;100&quot;}[1m])) by (service) + sum(rate(http_request_duration_ms_bucket{le=&quot;300&quot;}[1m])) by (service)
+) / 2 / sum(rate(http_request_duration_ms_count[1m])) by (service)</code></pre>
 
 
 <p>You can add it to the existing dashboard:</p>
@@ -850,20 +831,17 @@ docker-compose up -d
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.3ca04de7.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
-    
-    
+        <script src="../search/main.js"></script>
       
     
   </body>

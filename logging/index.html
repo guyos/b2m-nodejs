@@ -33,8 +33,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <link rel="shortcut icon" href="..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -58,6 +58,9 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -104,7 +107,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://rafal-szypulka.github.io/b2m-nodejs" title="Build to Manage - Node.js application monitoring and logging lab" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -114,22 +117,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Build to Manage - Node.js application monitoring and logging lab
-              </span>
-              <span class="md-header-nav__topic">
-                2. Node.js logging and Elastic stack integration
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Build to Manage - Node.js application monitoring and logging lab
+            </span>
+            <span class="md-header-nav__topic">
+              2. Node.js logging and Elastic stack integration
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -152,7 +152,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -163,20 +162,18 @@
 
   
 
-
-  <a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -200,7 +197,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://rafal-szypulka.github.io/b2m-nodejs" title="Build to Manage - Node.js application monitoring and logging lab" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </a>
     Build to Manage - Node.js application monitoring and logging lab
@@ -212,20 +209,18 @@
 
   
 
-
-  <a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/rafal-szypulka/b2m-nodejs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -469,90 +464,75 @@
 <p>According to the <a href="https://12factor.net/">12-factor</a> application guidelines, logs are the stream of aggregated, time-ordered events. A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage log files. Instead, each running process writes its event stream, unbuffered, to stdout. If you deviate from these guidelines, make sure that you address the operational needs for log files, such as logging to local files and applying log rotation policies.</p>
 <h2 id="configure-the-logging-library">Configure the logging library<a class="headerlink" href="#configure-the-logging-library" title="Permanent link">&para;</a></h2>
 <p>Go to the directory where the <code>server.js</code> file is located and run the following command to install and configure a <a href="http://github.com/winstonjs/winston">winston</a> logging library for node.js.</p>
-<div class="codehilite"><pre><span></span>cd ~/b2m-nodejs/src
-npm install --save winston
-</pre></div>
+<pre class="codehilite"><code>cd ~/b2m-nodejs/src
+npm install --save winston</code></pre>
 
 
 <p>this should add the following dependency to the <code>package.json</code>:</p>
-<div class="codehilite"><pre><span></span>    &quot;winston&quot;: &quot;^3.2.1&quot;
-</pre></div>
+<pre class="codehilite"><code>    &quot;winston&quot;: &quot;^3.2.1&quot;</code></pre>
 
 
 <h2 id="example-implementation-of-logging">Example implementation of logging<a class="headerlink" href="#example-implementation-of-logging" title="Permanent link">&para;</a></h2>
 <p>Add/uncomment the following line at the beginning of <code>server.js</code> to load the <code>winston</code> module:</p>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">createLogger</span><span class="p">,</span> <span class="nx">format</span><span class="p">,</span> <span class="nx">transports</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;winston&#39;</span><span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-js">const { createLogger, format, transports } = require('winston')</code></pre>
 
 
 <p>then create the <code>logger</code> object:</p>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">createLogger</span><span class="p">({</span>
-  <span class="nx">level</span><span class="o">:</span> <span class="s1">&#39;debug&#39;</span><span class="p">,</span>
-  <span class="nx">format</span><span class="o">:</span> <span class="nx">format</span><span class="p">.</span><span class="nx">combine</span><span class="p">(</span>
-    <span class="nx">format</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">({</span>
-      <span class="nx">format</span><span class="o">:</span> <span class="s2">&quot;YYYY-MM-DD&#39;T&#39;HH:mm:ss.SSSZ&quot;</span>
-    <span class="p">}),</span>
-    <span class="nx">format</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
-  <span class="p">),</span>
-  <span class="nx">transports</span><span class="o">:</span> <span class="p">[</span><span class="k">new</span> <span class="nx">transports</span><span class="p">.</span><span class="nx">Console</span><span class="p">()]</span>
-<span class="p">});</span>
-</pre></div>
+<pre class="codehilite"><code class="language-js">const logger = createLogger({
+  level: 'debug',
+  format: format.combine(
+    format.timestamp({
+      format: &quot;YYYY-MM-DD'T'HH:mm:ss.SSSZ&quot;
+    }),
+    format.json()
+  ),
+  transports: [new transports.Console()]
+});</code></pre>
 
 
 <p>The configuration above specifies timestamp field format and enables sending logs in <code>json</code> format to STDOUT.
 Timestamp should include the time zone information and be precise down to milliseconds. </p>
 <p>Whenever you want to generate a log entry, just use the <code>logger</code> object with level specified methods: <strong>error</strong>, <strong>warn</strong>, <strong>info</strong>, <strong>verbose</strong>, <strong>debug</strong></p>
-<div class="codehilite"><pre><span></span><span class="nx">msg</span> <span class="o">=</span> <span class="s1">&#39;RSAP0010E: Severe problem detected&#39;</span>
-<span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
-<span class="nx">msg</span> <span class="o">=</span> <span class="s1">&#39;RSAP0001I: Transaction OK&#39;</span>
-<span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-js">msg = 'RSAP0010E: Severe problem detected'
+logger.error(msg)
+msg = 'RSAP0001I: Transaction OK'
+logger.info(msg)</code></pre>
 
 
 <p>You can add also additional metadata like <code>errorCode</code> or <code>transactionTime</code> that can be useful in log analytics.</p>
 <p>Extend your logger statement like on the example below. Additional metadata will be used later in our log analytics dashboard. Look for commented lines starting with <code>logger</code> and uncomment it.</p>
-<div class="codehilite"><pre><span></span><span class="nx">msg</span> <span class="o">=</span> <span class="s1">&#39;RSAP0001I: Transaction OK&#39;</span>
-<span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;errCode&quot;</span><span class="o">:</span> <span class="s2">&quot;RSAP0001I&quot;</span><span class="p">,</span> <span class="s2">&quot;transactionTime&quot;</span><span class="o">:</span> <span class="nx">delay</span><span class="p">})</span>
+<pre class="codehilite"><code class="language-js">msg = 'RSAP0001I: Transaction OK'
+logger.info(msg, {&quot;errCode&quot;: &quot;RSAP0001I&quot;, &quot;transactionTime&quot;: delay})
 
-<span class="nx">msg</span> <span class="o">=</span> <span class="s1">&#39;RSAP0010E: Severe problem detected&#39;</span>
-<span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;errorCode&quot;</span><span class="o">:</span> <span class="s2">&quot;RSAP0010E&quot;</span><span class="p">,</span> <span class="s2">&quot;transactionTime&quot;</span><span class="o">:</span> <span class="nx">delay</span><span class="p">})</span>
-</pre></div>
+msg = 'RSAP0010E: Severe problem detected'
+logger.error(msg, {&quot;errorCode&quot;: &quot;RSAP0010E&quot;, &quot;transactionTime&quot;: delay})</code></pre>
 
 
 <p>Restart the application (<code>ctrl-c</code> in the terminal window and start with <code>npm start server.js</code> after every code change). </p>
 <p>Example STDOUT (in the application terminal window):</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;errCode&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I&quot;</span><span class="p">,</span><span class="nt">&quot;transactionTime&quot;</span><span class="p">:</span><span class="mi">81</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;info&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I: Transaction OK&quot;</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-27T07:34:49.625Z&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;errCode&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0010E&quot;</span><span class="p">,</span><span class="nt">&quot;transactionTime&quot;</span><span class="p">:</span><span class="mi">76</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0010E: Severe problem detected&quot;</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-27T07:34:50.008Z&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;errCode&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I&quot;</span><span class="p">,</span><span class="nt">&quot;transactionTime&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;info&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I: Transaction OK&quot;</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-27T07:34:50.325Z&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;errCode&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I&quot;</span><span class="p">,</span><span class="nt">&quot;transactionTime&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;info&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I: Transaction OK&quot;</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-27T07:34:50.620Z&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;errCode&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I&quot;</span><span class="p">,</span><span class="nt">&quot;transactionTime&quot;</span><span class="p">:</span><span class="mi">96</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;info&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I: Transaction OK&quot;</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-27T07:34:50.871Z&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;errCode&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I&quot;</span><span class="p">,</span><span class="nt">&quot;transactionTime&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;info&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RSAP0001I: Transaction OK&quot;</span><span class="p">,</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-27T07:34:51.156Z&quot;</span><span class="p">}</span>
-</pre></div>
+<pre class="codehilite"><code class="language-json">{&quot;errCode&quot;:&quot;RSAP0001I&quot;,&quot;transactionTime&quot;:81,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;RSAP0001I: Transaction OK&quot;,&quot;timestamp&quot;:&quot;2019-02-27T07:34:49.625Z&quot;}
+{&quot;errCode&quot;:&quot;RSAP0010E&quot;,&quot;transactionTime&quot;:76,&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;RSAP0010E: Severe problem detected&quot;,&quot;timestamp&quot;:&quot;2019-02-27T07:34:50.008Z&quot;}
+{&quot;errCode&quot;:&quot;RSAP0001I&quot;,&quot;transactionTime&quot;:22,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;RSAP0001I: Transaction OK&quot;,&quot;timestamp&quot;:&quot;2019-02-27T07:34:50.325Z&quot;}
+{&quot;errCode&quot;:&quot;RSAP0001I&quot;,&quot;transactionTime&quot;:1,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;RSAP0001I: Transaction OK&quot;,&quot;timestamp&quot;:&quot;2019-02-27T07:34:50.620Z&quot;}
+{&quot;errCode&quot;:&quot;RSAP0001I&quot;,&quot;transactionTime&quot;:96,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;RSAP0001I: Transaction OK&quot;,&quot;timestamp&quot;:&quot;2019-02-27T07:34:50.871Z&quot;}
+{&quot;errCode&quot;:&quot;RSAP0001I&quot;,&quot;transactionTime&quot;:62,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;RSAP0001I: Transaction OK&quot;,&quot;timestamp&quot;:&quot;2019-02-27T07:34:51.156Z&quot;}</code></pre>
 
 
 <blockquote>
 <p>After testing of the logging features, stop the application.</p>
 </blockquote>
 <p>Configure your Github user and commit your changes to your GitHub repository:</p>
-<div class="codehilite"><pre><span></span>cd ~/b2m-nodejs
+<pre class="codehilite"><code>cd ~/b2m-nodejs
 git config --global user.email &quot;&lt;your_github_email&gt;&quot;
 git commit -am &quot;I added logging to my app!&quot;
-git push
-</pre></div>
+git push</code></pre>
 
 
-<p>Access your Github via web browser and verify that you can see recent updates and history of changes.</p>
-<p>The log standardization is especially important for big applications. Simple source code scanning tools can help to find out if the application code follows the recommended logging standard. Run the tool we created for one of our customers to collect statistics about the logging code in our application. It supports both javascript and java:</p>
-<div class="codehilite"><pre><span></span>cd ~/b2m-nodejs
-java -jar code-scan-logging/scan.jar src
-</pre></div>
-
-
+<p>Access your Github via web browser and verify that you see recent updates and history of changes.</p>
 <h2 id="create-a-docker-image-for-nodejs-application">Create a Docker image for node.js application<a class="headerlink" href="#create-a-docker-image-for-nodejs-application" title="Permanent link">&para;</a></h2>
 <p>Use provided <code>Dockerfile</code> to build the application container:</p>
-<div class="codehilite"><pre><span></span>cd ~/b2m-nodejs/src
-docker build -t b2m-nodejs .
-</pre></div>
+<pre class="codehilite"><code>cd ~/b2m-nodejs/src
+docker build -t b2m-nodejs .</code></pre>
 
 
 <h2 id="integrate-with-the-elastic-stack">Integrate with the Elastic stack<a class="headerlink" href="#integrate-with-the-elastic-stack" title="Permanent link">&para;</a></h2>
@@ -562,7 +542,7 @@ docker build -t b2m-nodejs .
 Configuration for this lab is based on <a href="https://github.com/deviantony/docker-elk">https://github.com/deviantony/docker-elk</a>.
 In the lab VM the Elastic stack docker compose project was cloned to <code>/root/docker-elk</code>.</p>
 <p>Briefly review the simple logstash configuration we use for this lab: <code>/root/docker-elk/logstash/pipeline/logstash.conf</code>:</p>
-<div class="codehilite"><pre><span></span>input {
+<pre class="codehilite"><code>input {
     gelf { port =&gt; 5000 }
 }
 
@@ -585,37 +565,32 @@ output {
         hosts =&gt; &quot;elasticsearch:9200&quot;
     }
     stdout { codec =&gt; rubydebug }
-}
-</pre></div>
+}</code></pre>
 
 
 <p>The above will reconfigure logstash to use <code>gelf</code> (Graylog Extended Log Format) protocol supported by Docker log driver, so we can directly stream application logs to Logstash using <code>gelf</code>.</p>
 <p>1). Start the Elastic stack:</p>
-<div class="codehilite"><pre><span></span>cd /root/docker-elk
-docker-compose up -d
-</pre></div>
+<pre class="codehilite"><code>cd /root/docker-elk
+docker-compose up -d</code></pre>
 
 
 <p>Expected output:</p>
-<div class="codehilite"><pre><span></span>Creating network &quot;docker-elk_elk&quot; with driver &quot;bridge&quot;
+<pre class="codehilite"><code>Creating network &quot;docker-elk_elk&quot; with driver &quot;bridge&quot;
 Creating docker-elk_elasticsearch_1 ... done
 Creating docker-elk_kibana_1        ... done
-Creating docker-elk_logstash_1      ... done
-</pre></div>
+Creating docker-elk_logstash_1      ... done</code></pre>
 
 
 <p>2). Verify you can access Kibana on <code>http://localhost:5601</code>.</p>
 <h3 id="start-the-nodejs-application-container-and-forward-logs-to-elastic-stack">Start the node.js application container and forward logs to Elastic stack<a class="headerlink" href="#start-the-nodejs-application-container-and-forward-logs-to-elastic-stack" title="Permanent link">&para;</a></h3>
 <p>Start the application container with this command:</p>
-<div class="codehilite"><pre><span></span>docker run --name btm-nodejs -d -p 3001:3001 --log-driver=gelf \
---log-opt gelf-address=udp://localhost:5000 b2m-nodejs
-</pre></div>
+<pre class="codehilite"><code>docker run --name btm-nodejs -d -p 3001:3001 --log-driver=gelf \
+--log-opt gelf-address=udp://localhost:5000 b2m-nodejs</code></pre>
 
 
 <p>In the lab environment, the Elastic stack has been preconfigured, so the example Dashboard and Visualizations should be available in Kibana out of the box. </p>
 <p>Simulate a couple fo transactions using <code>Firefox</code> or <code>curl</code> by accessing <code>http://localhost:3001/checkout</code>:</p>
-<div class="codehilite"><pre><span></span>for i in {1..10}; do curl http://localhost:3001/checkout; done
-</pre></div>
+<pre class="codehilite"><code>for i in {1..10}; do curl http://localhost:3001/checkout; done</code></pre>
 
 
 <p>and check out the Kibana dashboard: <code>Dashboards-&gt;BTM Node.js</code></p>
@@ -628,9 +603,8 @@ Creating docker-elk_logstash_1      ... done
 <p>It should be similar to:
 <img alt="" src="../images/kibana.png" /></p>
 <p>Stop and remove the node.js Docker container before starting the next exercise.</p>
-<div class="codehilite"><pre><span></span>docker stop btm-nodejs
-docker rm btm-nodejs
-</pre></div>
+<pre class="codehilite"><code>docker stop btm-nodejs
+docker rm btm-nodejs</code></pre>
                 
                   
                 
@@ -694,20 +668,17 @@ docker rm btm-nodejs
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.3ca04de7.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
-    
-    
+        <script src="../search/main.js"></script>
       
     
   </body>
